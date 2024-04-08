@@ -1,9 +1,5 @@
-//
-// Created by xin on 2020/10/2.
-//
-
-#ifndef ORB_SLAM2_LINEEXTRACTOR_H
-#define ORB_SLAM2_LINEEXTRACTOR_H
+#ifndef MonoThermal_SLAM_LINEEXTRACTOR_H
+#define MonoThermal_SLAM_LINEEXTRACTOR_H
 
 #include <vector>
 
@@ -14,7 +10,7 @@
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/highgui.hpp>
 
-namespace ORB_SLAM2
+namespace MonoThermal_SLAM
 {
     struct sort_flines_by_length
     {
@@ -25,9 +21,9 @@ namespace ORB_SLAM2
 
     enum class LineExtractType
     {
-        LSD = 0,
-        FLD,
-        TP_LSD
+        ELSED = 0,
+        lsd = 1,
+        fld = 2;
     };
 
     class LineExtractor
@@ -53,6 +49,7 @@ namespace ORB_SLAM2
 
     private:
         cv::Ptr<cv::ximgproc::FastLineDetector> fld_;
+        cv::Ptr<cv::line_descriptor::LSDDetector> lsd_ ;
         cv::Ptr<cv::line_descriptor::BinaryDescriptor> lbd_;
 
         int nLineFeatures_;
@@ -69,6 +66,9 @@ namespace ORB_SLAM2
     private:
 //        cv::Ptr<cv::line_descriptor::LSDDetectorC> lsd_;
 //        cv::Ptr<cv::line_descriptor::BinaryDescriptor> lbd_;
+          cv::Ptr<cv::line_descriptor::LSDDetector> lsd_ ;
+          cv::Ptr<cv::line_descriptor::BinaryDescriptor> lbd_;
+
 
         int nLineFeatures_;
         int nminLineLength_;
@@ -76,4 +76,4 @@ namespace ORB_SLAM2
 }
 
 
-#endif //ORB_SLAM2_LINEEXTRACTOR_H
+#endif //MonoThermal_SLAM_LINEEXTRACTOR_H

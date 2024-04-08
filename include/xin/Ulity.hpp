@@ -1,9 +1,5 @@
-//
-// Created by xin on 2020/10/3.
-//
-#ifndef ORB_SLAM2_ULITY_H
-#define ORB_SLAM2_ULITY_H
-
+#ifndef MonoThermal_SLAM_ULITY_H
+#define MonoThermal_SLAM_ULITY_H
 
 #include <eigen3/Eigen/Dense>
 #include <opencv2/core/core.hpp>

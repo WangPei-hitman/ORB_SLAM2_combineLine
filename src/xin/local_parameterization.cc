@@ -1,7 +1,3 @@
-//
-// Created by lixin04 on 19年11月22日.
-//
-
 #include "include/xin/local_parameterization.hpp"
 
 template <typename Derived>

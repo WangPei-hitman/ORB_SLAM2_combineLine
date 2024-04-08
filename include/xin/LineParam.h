@@ -1,15 +1,11 @@
-//
-// Created by xin on 2020/10/5.
-//
-
-#ifndef ORB_SLAM2_COMBIANLINE_LINEPARAM_H
-#define ORB_SLAM2_COMBIANLINE_LINEPARAM_H
+#ifndef MonoThermal_SLAM_COMBIANLINE_LINEPARAM_H
+#define MonoThermal_SLAM_COMBIANLINE_LINEPARAM_H
 
 #include <eigen3/Eigen/Dense>
 #include "xin/LineGeometry.hpp"
 #include "xin/Ulity.hpp"
 
-namespace ORB_SLAM2
+namespace MonoThermal_SLAM
 {
     class Plucker
     {
@@ -82,4 +78,4 @@ namespace ORB_SLAM2
 }
 
 
-#endif //ORB_SLAM2_COMBIANLINE_LINEPARAM_H
+#endif //MonoThermal_SLAM_COMBIANLINE_LINEPARAM_H

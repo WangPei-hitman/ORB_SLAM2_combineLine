@@ -1,7 +1,3 @@
-//
-// Created by lixin04 on 19年11月22日.
-//
-
 #pragma once
 
 #include <eigen3/Eigen/Dense>

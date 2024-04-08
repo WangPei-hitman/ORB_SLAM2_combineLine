@@ -1,11 +1,7 @@
-//
-// Created by xin on 2020/10/5.
-//
-
 #include <iostream>
 #include "include/xin/LineParam.h"
 
-namespace ORB_SLAM2
+namespace MonoThermal_SLAM
 {
     Eigen::Vector4d Plucker::GetOrth()
     {

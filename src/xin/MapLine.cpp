@@ -1,10 +1,6 @@
-//
-// Created by xin on 2020/10/2.
-//
 
 #include "include/xin/MapLine.h"
-
-namespace ORB_SLAM2
+namespace MonoThermal_SLAM
 {
     long unsigned int MapLine::nNextId=0;
     mutex MapLine::mGlobalMutex;
@@ -33,10 +29,6 @@ namespace ORB_SLAM2
             return;
         mObservations[pKF]=idx;
 
-        // TODO stereo line remain
-//        if(pKF->mvuRight[idx]>=0)
-//            nObs+=2;
-//        else
             nObs++;
     }
 
@@ -47,20 +39,13 @@ namespace ORB_SLAM2
             unique_lock<mutex> lock(mMutexFeatures);
             if(mObservations.count(pKF))
             {
-                // TODO stereo line remain
-//                int idx = mObservations[pKF];
-//                if(pKF->mvuRight[idx]>=0)
-//                    nObs-=2;
-//                else
-                    nObs--;
-
                 mObservations.erase(pKF);
 
                 if(mpRefKF==pKF)
                     mpRefKF=mObservations.begin()->first;
 
                 // If only 2 observations or less, discard point
-                if(nObs<=2)
+                if(nObs<=6)
                     bBad=true;
             }
         }

@@ -88,7 +88,7 @@ Eigen::Vector2d MonoLineProjection::compute_error(const Eigen::Matrix3d &Rcw, co
                                                   const Eigen::Vector4d &Orth, const Eigen::Vector4d &obs,
                                                   bool &bad_line)
 {
-    auto plucker = ORB_SLAM2::Plucker(Orth);
+    auto plucker = MonoThermal_SLAM::Plucker(Orth);
 
     // TODO xinli xinli xinli    why different???????????????????????????????????????????????????????????
     auto [norm_c, dir_c] = plucker.Get_nd_transform(Rcw, tcw);
@@ -97,7 +97,7 @@ Eigen::Vector2d MonoLineProjection::compute_error(const Eigen::Matrix3d &Rcw, co
 //    auto norm_c = Rcw * norm_w + Ulity::skewSymmetric(tcw) * Rcw * dir_w;
 //    auto dir_c = Rcw * dir_w;
 
-//    auto [ norm_w, dir_w ] = ORB_SLAM2::Plucker::Orth2Plucker( Orth );
+//    auto [ norm_w, dir_w ] = MonoThermal_SLAM::Plucker::Orth2Plucker( Orth );
 //        std::cout << "compute_error norm_w = " << norm_w.transpose() << std::endl;
 //        std::cout << "compute_error dir_w = " << dir_w.transpose() << std::endl;
 //    auto norm_c = Rcw * norm_w + Ulity::skewSymmetric(tcw) * Rcw * dir_w;
@@ -140,7 +140,7 @@ Eigen::Vector2d MonoLineProjection::compute_error(const Eigen::Matrix3d &Rcw, co
 }
 
 Eigen::Vector2d MonoLineProjection::compute_error(const Eigen::Matrix3d &Rcw, const Eigen::Vector3d &tcw,
-                                                  const ORB_SLAM2::Plucker &plucker, const Eigen::Vector4d &obs,
+                                                  const MonoThermal_SLAM::Plucker &plucker, const Eigen::Vector4d &obs,
                                                   bool &bad_line)
 {
     auto [n_c, d_c] = plucker.Get_nd_transform(Rcw, tcw);
@@ -186,7 +186,7 @@ bool MonoLineProjection::Evaluate(const double *const *parameters, double *resid
     Eigen::Vector4d line_orth( parameters[1][0],parameters[1][1],parameters[1][2],parameters[1][3] );
     Eigen::Matrix3d Rcw(Qcw);
 
-    auto plucker = ORB_SLAM2::Plucker(line_orth);
+    auto plucker = MonoThermal_SLAM::Plucker(line_orth);
     auto [norm_w, dirc_w] = plucker.Get_nd();
 //    plucker.plk_transform( Rcw, tcw );
 //    auto norm_c = plucker.GetNorm();

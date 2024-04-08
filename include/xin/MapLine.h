@@ -1,8 +1,5 @@
-//
-// Created by xin on 2020/10/2.
-//
-#ifndef ORB_SLAM2_MAPLINE_H
-#define ORB_SLAM2_MAPLINE_H
+#ifndef MonoThermal_SLAM_MAPLINE_H
+#define MonoThermal_SLAM_MAPLINE_H
 
 #include <eigen3/Eigen/Dense>
 #include <opencv2/core/core.hpp>
@@ -18,7 +15,7 @@
 #include "ORBmatcher.h"
 #include "LineParam.h"
 
-namespace ORB_SLAM2
+namespace MonoThermal_SLAM
 {
     class Map;
 

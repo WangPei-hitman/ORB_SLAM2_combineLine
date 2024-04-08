@@ -1,7 +1,3 @@
-//
-// Created by xin on 2020/10/3.
-//
-
 #pragma once
 #include <vector>
 #include <opencv2/core/core.hpp>
@@ -11,8 +7,7 @@
 #include "KeyFrame.h"
 #include "Frame.h"
 
-
-namespace ORB_SLAM2
+namespace MonoThermal_SLAM
 {
     class LineMatcher
     {
@@ -23,7 +18,6 @@ namespace ORB_SLAM2
                 KeyFrame *pKF1, KeyFrame* pKF2,
                 std::vector<pair<size_t, size_t> > &vMatchedPairs
                 ) const;
-
 
         int SearchByProjection(
                 Frame &F, const std::vector<MapLine*>& vpLocalMapLines
