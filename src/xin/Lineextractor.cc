@@ -2,7 +2,7 @@
 
 #include "include/xin/Lineextractor.h"
 
-namespace MonoThermal_SLAM
+namespace ORB_SLAM2
 {
     LSDExtractor::LSDExtractor(const int nLineFeatures, const int nminLinelength)
     :nLineFeatures_(nLineFeatures), nminLineLength_(nminLinelength)

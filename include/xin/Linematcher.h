@@ -7,7 +7,7 @@
 #include "KeyFrame.h"
 #include "Frame.h"
 
-namespace MonoThermal_SLAM
+namespace ORB_SLAM2
 {
     class LineMatcher
     {

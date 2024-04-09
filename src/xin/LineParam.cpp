@@ -1,7 +1,7 @@
 #include <iostream>
 #include "include/xin/LineParam.h"
 
-namespace MonoThermal_SLAM
+namespace ORB_SLAM2
 {
     Eigen::Vector4d Plucker::GetOrth()
     {

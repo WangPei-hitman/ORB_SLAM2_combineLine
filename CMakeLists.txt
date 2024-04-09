@@ -7,8 +7,8 @@ ENDIF()
 
 MESSAGE("Build type: " ${CMAKE_BUILD_TYPE})
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}  -Wall  -O3 -march=native ")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall   -O3 -march=native")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall  -O3 -march=native ")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall  -O3 -march=native")
 
 
 # Check C++11 or C++0x support
@@ -33,7 +33,7 @@ LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 #endif()
 
 find_package(OpenCV 4.0 REQUIRED)
-find_package(Eigen3 3.1.0 REQUIRED)
+find_package(Eigen3 3 NO_MODULE REQUIRED)
 find_package(Pangolin REQUIRED)
 find_package(Ceres REQUIRED)
 find_package(OpenMP)
@@ -46,9 +46,12 @@ ${EIGEN3_INCLUDE_DIR}
 ${OpenCV_INCLUDE_DIRS}
 ${Pangolin_INCLUDE_DIRS}
 ${CERES_INCLUDE_DIRS}
+${PROJECT_SOURCE_DIR}/Thirdparty/ELSED
 )
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
+
+add_subdirectory(Thirdparty/ELSED)
 
 add_library(${PROJECT_NAME} SHARED
 src/System.cc
@@ -74,8 +77,8 @@ src/xin/Lineextractor.cc
 include/xin/Lineextractor.h
 src/xin/MapLine.cpp
 include/xin/MapLine.h
-src/xin/Linematrcher.cpp
-include/xin/Linematrcher.h
+src/xin/Linematcher.cpp
+include/xin/Linematcher.h
         include/xin/Ulity.hpp
         include/xin/LineGeometry.hpp
         src/xin/projection_factor.cc
@@ -88,6 +91,7 @@ ${Pangolin_LIBRARIES}
 ${CERES_LIBRARIES}
 ${PROJECT_SOURCE_DIR}/Thirdparty/DBoW2/lib/libDBoW2.so
 ${PROJECT_SOURCE_DIR}/Thirdparty/g2o/lib/libg2o.so
+elsed
 #${PROJECT_SOURCE_DIR}/Thirdparty/line_descriptor/lib/liblinedesc.so
 )
 

@@ -26,7 +26,7 @@
 #include "LoopClosing.h"
 #include "Tracking.h"
 #include "KeyFrameDatabase.h"
-#include "xin/Linematrcher.h"
+#include "xin/Linematcher.h"
 
 #include <mutex>
 

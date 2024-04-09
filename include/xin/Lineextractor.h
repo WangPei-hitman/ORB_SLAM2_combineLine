@@ -1,5 +1,5 @@
-#ifndef MonoThermal_SLAM_LINEEXTRACTOR_H
-#define MonoThermal_SLAM_LINEEXTRACTOR_H
+#ifndef ORB_SLAM2_LINEEXTRACTOR_H
+#define ORB_SLAM2_LINEEXTRACTOR_H
 
 #include <vector>
 
@@ -10,7 +10,7 @@
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/highgui.hpp>
 
-namespace MonoThermal_SLAM
+namespace ORB_SLAM2
 {
     struct sort_flines_by_length
     {
@@ -23,7 +23,7 @@ namespace MonoThermal_SLAM
     {
         ELSED = 0,
         lsd = 1,
-        fld = 2;
+        fld = 2
     };
 
     class LineExtractor
@@ -76,4 +76,4 @@ namespace MonoThermal_SLAM
 }
 
 
-#endif //MonoThermal_SLAM_LINEEXTRACTOR_H
+#endif //ORB_SLAM2_LINEEXTRACTOR_H

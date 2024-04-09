@@ -1,5 +1,5 @@
-#ifndef MonoThermal_SLAM_MAPLINE_H
-#define MonoThermal_SLAM_MAPLINE_H
+#ifndef ORB_SLAM2_MAPLINE_H
+#define ORB_SLAM2_MAPLINE_H
 
 #include <eigen3/Eigen/Dense>
 #include <opencv2/core/core.hpp>
@@ -15,7 +15,7 @@
 #include "ORBmatcher.h"
 #include "LineParam.h"
 
-namespace MonoThermal_SLAM
+namespace ORB_SLAM2
 {
     class Map;
 

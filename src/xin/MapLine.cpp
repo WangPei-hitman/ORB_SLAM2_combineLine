@@ -1,6 +1,6 @@
 
 #include "include/xin/MapLine.h"
-namespace MonoThermal_SLAM
+namespace ORB_SLAM2
 {
     long unsigned int MapLine::nNextId=0;
     mutex MapLine::mGlobalMutex;

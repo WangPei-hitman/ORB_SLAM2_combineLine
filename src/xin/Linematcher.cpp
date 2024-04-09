@@ -1,7 +1,7 @@
 
-#include "include/xin/Linematrcher.h"
+#include "include/xin/Linematcher.h"
 #include "xin/projection_factor.hpp"
-namespace MonoThermal_SLAM
+namespace ORB_SLAM2
 {
 
     const int LineMatcher::TH_HIGH = 100;
@@ -77,11 +77,11 @@ namespace MonoThermal_SLAM
 
             const auto MLdescri = pML->GetDescriptor();
 
-            const float &fx = MonoThermal_SLAM::Frame::fx;
-            const float &cx = MonoThermal_SLAM::Frame::cx;
-            const float &cy = MonoThermal_SLAM::Frame::cy;
-            const float &invfx = MonoThermal_SLAM::Frame::invfx;
-            const float &invfy = MonoThermal_SLAM::Frame::invfy;
+            const float &fx = ORB_SLAM2::Frame::fx;
+            const float &cx = ORB_SLAM2::Frame::cx;
+            const float &cy = ORB_SLAM2::Frame::cy;
+            const float &invfx = ORB_SLAM2::Frame::invfx;
+            const float &invfy = ORB_SLAM2::Frame::invfy;
             cv::Mat Tcw_mat = F.mTcw;
             Eigen::Matrix<double,3,3> Rcw;
             Rcw << Tcw_mat.at<float>(0,0), Tcw_mat.at<float>(0,1), Tcw_mat.at<float>(0,2),
@@ -155,18 +155,18 @@ namespace MonoThermal_SLAM
         Eigen::Matrix3d Rcw = Converter::toMatrix3d(cvRcw);
         Eigen::Vector3d tcw = Converter::toVector3d(cvtcw);
 
-        const float &cx = MonoThermal_SLAM::Frame::cx;
-        const float &cy = MonoThermal_SLAM::Frame::cy;
-        const float &invfx = MonoThermal_SLAM::Frame::invfx;
-        const float &invfy = MonoThermal_SLAM::Frame::invfy;
+        const float &cx = ORB_SLAM2::Frame::cx;
+        const float &cy = ORB_SLAM2::Frame::cy;
+        const float &invfx = ORB_SLAM2::Frame::invfx;
+        const float &invfy = ORB_SLAM2::Frame::invfy;
         //  a-----b
         //  |     |
         //  d-----c
 
-        double minX = MonoThermal_SLAM::Frame::mnMinX;
-        double minY = MonoThermal_SLAM::Frame::mnMinY;
-        double maxX = MonoThermal_SLAM::Frame::mnMaxX;
-        double maxY = MonoThermal_SLAM::Frame::mnMaxY;
+        double minX = ORB_SLAM2::Frame::mnMinX;
+        double minY = ORB_SLAM2::Frame::mnMinY;
+        double maxX = ORB_SLAM2::Frame::mnMaxX;
+        double maxY = ORB_SLAM2::Frame::mnMaxY;
 
         Eigen::Vector3d corna( (minX-cx) * invfx, (minY-cy) * invfy, 1. );
         Eigen::Vector3d cornb( (maxX-cx) * invfx, (minY-cy) * invfy, 1. );
@@ -253,18 +253,18 @@ namespace MonoThermal_SLAM
         Eigen::Matrix3d Rcw = Converter::toMatrix3d(cvRcw);
         Eigen::Vector3d tcw = Converter::toVector3d(cvtcw);
 
-        const float &cx = MonoThermal_SLAM::Frame::cx;
-        const float &cy = MonoThermal_SLAM::Frame::cy;
-        const float &invfx = MonoThermal_SLAM::Frame::invfx;
-        const float &invfy = MonoThermal_SLAM::Frame::invfy;
+        const float &cx = ORB_SLAM2::Frame::cx;
+        const float &cy = ORB_SLAM2::Frame::cy;
+        const float &invfx = ORB_SLAM2::Frame::invfx;
+        const float &invfy = ORB_SLAM2::Frame::invfy;
         //  a-----b
         //  |     |
         //  d-----c
 
-        double minX = MonoThermal_SLAM::Frame::mnMinX;
-        double minY = MonoThermal_SLAM::Frame::mnMinY;
-        double maxX = MonoThermal_SLAM::Frame::mnMaxX;
-        double maxY = MonoThermal_SLAM::Frame::mnMaxY;
+        double minX = ORB_SLAM2::Frame::mnMinX;
+        double minY = ORB_SLAM2::Frame::mnMinY;
+        double maxX = ORB_SLAM2::Frame::mnMaxX;
+        double maxY = ORB_SLAM2::Frame::mnMaxY;
 
         Eigen::Vector3d corna( (minX-cx) * invfx, (minY-cy) * invfy, 1. );
         Eigen::Vector3d cornb( (maxX-cx) * invfx, (minY-cy) * invfy, 1. );

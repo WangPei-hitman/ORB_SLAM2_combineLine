@@ -1,5 +1,5 @@
-#ifndef MonoThermal_SLAM_LINEGEO_HPP
-#define MonoThermal_SLAM_LINEGEO_HPP
+#ifndef ORB_SLAM2_LINEGEO_HPP
+#define ORB_SLAM2_LINEGEO_HPP
 
 #include <eigen3/Eigen/Dense>
 #include <tuple>

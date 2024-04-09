@@ -1,11 +1,11 @@
-#ifndef MonoThermal_SLAM_COMBIANLINE_LINEPARAM_H
-#define MonoThermal_SLAM_COMBIANLINE_LINEPARAM_H
+#ifndef ORB_SLAM2_COMBIANLINE_LINEPARAM_H
+#define ORB_SLAM2_COMBIANLINE_LINEPARAM_H
 
 #include <eigen3/Eigen/Dense>
 #include "xin/LineGeometry.hpp"
 #include "xin/Ulity.hpp"
 
-namespace MonoThermal_SLAM
+namespace ORB_SLAM2
 {
     class Plucker
     {
@@ -78,4 +78,4 @@ namespace MonoThermal_SLAM
 }
 
 
-#endif //MonoThermal_SLAM_COMBIANLINE_LINEPARAM_H
+#endif //ORB_SLAM2_COMBIANLINE_LINEPARAM_H

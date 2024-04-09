@@ -143,7 +143,7 @@ public:
     static Eigen::Vector2d compute_error( const Eigen::Matrix3d& Rcw, const Eigen::Vector3d& tcw,
                                           const Eigen::Vector4d& Orth, const Eigen::Vector4d& obs, bool& bad_line);
     static Eigen::Vector2d compute_error( const Eigen::Matrix3d& Rcw, const Eigen::Vector3d& tcw,
-                                          const MonoThermal_SLAM::Plucker& plucker, const Eigen::Vector4d& obs, bool& bad_line);
+                                          const ORB_SLAM2::Plucker& plucker, const Eigen::Vector4d& obs, bool& bad_line);
     static Eigen::Matrix2d sqrt_info;
     Eigen::Vector4d line_obs_;
 };

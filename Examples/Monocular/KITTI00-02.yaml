@@ -63,6 +63,6 @@ Viewer.ViewpointF: 2000
 #--------------------------------------------------------------------------------------------
 LineExtractor: 1
 LineExtractor.nLineFeatures: 300
-LineExtractor.nLineMethod: 1 # 0:LSD 1:FLD 2:TP-LSD
+LineExtractor.nLineMethod: 0 # 0:LSD 1:FLD replaced with ELSED 2:TP-LSD
 LineExtractor.nMinLineLength: 30
 LineOptimization: 1
